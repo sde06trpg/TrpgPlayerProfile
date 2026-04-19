@@ -1,0 +1,110 @@
+/* 기본 */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+/* 로그인 전체 */
+#login-screen {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 로그인 박스 */
+.login-box {
+    background:#1e293b;
+    padding:30px;
+    border-radius:16px;
+    text-align:center;
+    width:320px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.login-box h2 {
+    margin-bottom:20px;
+}
+
+/* 🔥 input 공통 (핵심) */
+.login-box input {
+    width: 100%;
+    padding: 12px 45px 12px 12px;
+    /* margin-bottom: 12px; <- 이 줄을 지우거나 0으로 만드세요 */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    background: #e5e7eb;
+    color: black;
+    font-size: 14px;
+}
+
+/* 포커스 효과 */
+.login-box input:focus {
+    outline: 2px solid #38bdf8;
+}
+
+/* 비밀번호 wrapper */
+.password-wrapper {
+    position: relative;
+    width: 100%;       /* 전체 너비 차지 */
+    display: block;    /* 명시적으로 블록 요소 설정 */
+    margin-bottom: 12px; /* input에 있던 margin을 이쪽으로 옮기는 것이 관리하기 편합니다 */
+}
+
+/* 👁 눈 아이콘 */
+.eye {
+    position: absolute;
+    right: 15px;         /* 오른쪽 여백 살짝 조절 */
+    top: 50%;            /* 부모(wrapper)의 높이 50% 지점에 위치 */
+    transform: translateY(-50%); /* 아이콘 자신의 높이 절반만큼 위로 올려서 '완전 중앙' 정렬 */
+    
+    cursor: pointer;
+    user-select: none;
+
+    /* 사이즈 조절 */
+    font-size: 24px;     /* 기존 20px에서 24px~28px 정도로 키워보세요 */
+    color: #64748b;
+    opacity: 0.8;
+    transition: all 0.2s; /* 부드러운 변화를 위해 all 권장 */
+    
+    /* 정렬 보정 (아이콘 폰트 자체의 여백 때문일 때 유용) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye:hover {
+    color: #38bdf8;
+    opacity: 1;
+    /* 호버 시 크기가 커질 때도 중앙을 유지하도록 수정 */
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* 버튼 */
+.login-box button {
+    width:100%;
+    padding:12px;
+    background:#38bdf8;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.login-box button:hover {
+    background:#0ea5e9;
+}
+
+/* 에러 메시지 */
+#error-msg {
+    color:red;
+    margin-top:10px;
+    font-size: 13px;
+}
