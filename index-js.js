@@ -61,8 +61,6 @@ function login() {
     }, 500); // 살짝 딜레이 (느낌용)
 }
 
-// ... (이하 버튼 복구, 엔터 로그인, 자동 입력 등 나머지 함수는 동일합니다)
-
 // 버튼 복구 함수
 function resetBtn(btn) {
     btn.disabled = false;
