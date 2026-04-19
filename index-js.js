@@ -1,14 +1,16 @@
 // =========================
-// 👤 계정 데이터
+// 👤 계정 데이터 (경로 수정됨)
 // =========================
 const users = {
     "Luca": {
         password: "7319",
-        page: "Luca.html"
+        // index 폴더 기준: 밖으로 한 칸(../) -> character/ -> luca/ -> Luca.html
+        page: "../character/luca/Luca.html"
     },
     "Arkel": {
         password: "1111",
-        page: "Arkel.html"
+        // 아직 폴더가 없다면 구조에 맞춰 생성하거나 경로를 조절해야 합니다.
+        page: "../character/arkel/Arkel.html" 
     }
 };
 
@@ -24,42 +26,39 @@ function login() {
     const user = userInput.value.trim();
     const pass = passInput.value.trim();
 
-    // 입력 안했을 때
     if (!user || !pass) {
         errorMsg.innerText = "닉네임과 비밀번호를 모두 입력하세요.";
         return;
     }
 
-    // 버튼 잠금 (연타 방지)
     btn.disabled = true;
     btn.innerText = "확인 중...";
 
     setTimeout(() => {
-
-        // 아이디 없음
         if (!users[user]) {
             errorMsg.innerText = "존재하지 않는 닉네임입니다.";
             resetBtn(btn);
             return;
         }
 
-        // 비밀번호 틀림
         if (users[user].password !== pass) {
             errorMsg.innerText = "비밀번호가 틀렸습니다.";
             resetBtn(btn);
             return;
         }
 
-        // 성공
         localStorage.setItem("loginUser", user);
         localStorage.setItem("lastUser", user);
 
         alert(`${user}님 환영합니다!`);
 
+        // ✅ 수정된 경로로 이동
         window.location.href = users[user].page;
 
-    }, 500); // 살짝 딜레이 (느낌용)
+    }, 500);
 }
+
+// ... (이하 버튼 복구, 엔터 로그인, 자동 입력 등 나머지 함수는 동일합니다)
 
 // 버튼 복구 함수
 function resetBtn(btn) {
