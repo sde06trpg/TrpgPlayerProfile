@@ -5,12 +5,12 @@ const users = {
     "Luca": {
         password: "7319",
         // index 폴더 기준: 밖으로 한 칸(../) -> character/ -> luca/ -> Luca.html
-        page: "../character/luca/Luca.html"
+        page: "character/luca/Luca.html"
     },
     "Arkel": {
         password: "1111",
         // 아직 폴더가 없다면 구조에 맞춰 생성하거나 경로를 조절해야 합니다.
-        page: "../character/arkel/Arkel.html" 
+        page: "character/arkel/Arkel.html" 
     }
 };
 
