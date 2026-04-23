@@ -18,9 +18,26 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
+    /* --- 아래 두 줄이 추가된 부분입니다 --- */
+    justify-content: space-between; 
+    box-sizing: border-box; 
+    /* ---------------------------------- */
     padding: 0 20px;
     border-bottom: 1px solid #334155;
     z-index: 1000;
+}
+
+.nav-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* 부드러운 움직임 */
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2); /* 마우스를 올리면 살짝 커짐 */
+    filter: brightness(1.2); /* 살짝 더 밝게 */
 }
 
 .char-name {
