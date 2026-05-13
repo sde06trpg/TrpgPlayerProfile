@@ -6,9 +6,9 @@ const users = {
         password: "7319",
         page: "character/luca/Luca.html"
     },
-    "Arkel": {
-        password: "1111",
-        page: "Arkel.html"
+    "Jor": {
+        password: "1028",
+        page: "character/Jor/Jor.html"
     }
 };
 
